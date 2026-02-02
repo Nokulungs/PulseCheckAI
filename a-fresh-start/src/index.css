@@ -1,0 +1,207 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* PulseCheck AI Design System
+   A sophisticated, premium attendance management system with 
+   forest green sidebar, moss accents, and soft cream backgrounds.
+*/
+
+@layer base {
+  :root {
+    /* Core Brand Colors */
+    --forest: 155 35% 16%;           /* Dark green sidebar: #1a3a2f */
+    --moss: 155 15% 42%;             /* Primary accent: #5c7a6e */
+    --sage: 155 18% 58%;             /* Secondary: #8bac9e */
+    --nude: 35 23% 96%;              /* Background cream: #f7f5f2 */
+    --charcoal: 0 0% 16%;            /* Text: #2a2a2a */
+    
+    /* Semantic Mapping */
+    --background: 35 23% 96%;
+    --foreground: 0 0% 16%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 16%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 16%;
+
+    --primary: 155 35% 16%;
+    --primary-foreground: 35 23% 96%;
+
+    --secondary: 155 15% 42%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 35 18% 92%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 155 18% 58%;
+    --accent-foreground: 0 0% 16%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 35 12% 90%;
+    --input: 35 12% 90%;
+    --ring: 155 35% 16%;
+
+    --radius: 1rem;
+
+    /* Soft Border for cards */
+    --soft-border: 35 14% 88%;
+
+    /* Sidebar */
+    --sidebar-background: 155 35% 16%;
+    --sidebar-foreground: 35 23% 90%;
+    --sidebar-primary: 155 15% 42%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 155 25% 22%;
+    --sidebar-accent-foreground: 35 23% 96%;
+    --sidebar-border: 155 25% 22%;
+    --sidebar-ring: 155 15% 42%;
+  }
+
+  .dark {
+    --background: 155 35% 8%;
+    --foreground: 35 23% 96%;
+
+    --card: 155 30% 12%;
+    --card-foreground: 35 23% 96%;
+
+    --popover: 155 30% 12%;
+    --popover-foreground: 35 23% 96%;
+
+    --primary: 155 15% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 155 25% 22%;
+    --secondary-foreground: 35 23% 96%;
+
+    --muted: 155 25% 18%;
+    --muted-foreground: 35 18% 70%;
+
+    --accent: 155 18% 58%;
+    --accent-foreground: 0 0% 16%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 155 25% 20%;
+    --input: 155 25% 20%;
+    --ring: 155 15% 42%;
+
+    --soft-border: 155 20% 25%;
+
+    --sidebar-background: 155 40% 6%;
+    --sidebar-foreground: 35 23% 90%;
+    --sidebar-primary: 155 15% 42%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 155 30% 15%;
+    --sidebar-accent-foreground: 35 23% 96%;
+    --sidebar-border: 155 30% 15%;
+    --sidebar-ring: 155 15% 42%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+}
+
+/* Custom scrollbar for sidebar */
+@layer utilities {
+  .sidebar-scroll::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .sidebar-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .sidebar-scroll::-webkit-scrollbar-thumb {
+    background: hsl(var(--moss) / 0.3);
+    border-radius: 4px;
+  }
+  
+  .sidebar-scroll::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--moss) / 0.5);
+  }
+}
+
+/* Animation utilities */
+@layer utilities {
+  .animate-in {
+    animation: animateIn 0.5s ease-out forwards;
+  }
+  
+  @keyframes animateIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .slide-in-from-right-8 {
+    animation: slideFromRight 0.5s ease-out forwards;
+  }
+  
+  @keyframes slideFromRight {
+    from {
+      opacity: 0;
+      transform: translateX(2rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .slide-in-from-bottom-8 {
+    animation: slideFromBottom 0.5s ease-out forwards;
+  }
+  
+  @keyframes slideFromBottom {
+    from {
+      opacity: 0;
+      transform: translateY(2rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .zoom-in-95 {
+    animation: zoomIn 0.7s ease-out forwards;
+  }
+  
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
